@@ -28,17 +28,18 @@ namespace fib
             int numLen = num.Length;
             var final = new int[count];
            // Array.Copy()
-
+            int sum = 0;
             for(int i = 0; i<final.Length; i++ )
             {
                if (i< numLen )
                {
                    final[i] = num[i];
+                   sum+=num[i];
                }
                else
                {
                   if(i== numLen)
-                      final[i] = sumLastNElement(final,i,numLen);
+                      final[i] = sum;//sumLastNElement(final,i,numLen);
                   else
                       final[i] = final[i-1] + final[i-1] - final[i-numLen-1];//sumLastNElement(final,i,numLen);
                }
